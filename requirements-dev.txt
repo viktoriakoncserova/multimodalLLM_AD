@@ -1,0 +1,5 @@
+mypy
+pre-commit
+pytest
+playwright
+langfun

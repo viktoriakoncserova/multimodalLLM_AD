@@ -1,0 +1,6 @@
+langfun[llm-google-vertexai]<1.0.0
+python-dotenv<1.0
+playwright<2.0.0
+redmail<1.0.0
+google-auth<3.0.0
+Pillow<10.4

@@ -1,0 +1,168 @@
+# Byte-compiled / optimized / DLL files
+*$py.class
+*.py[cod]
+__pycache__/
+
+# C extensions
+*.so
+
+# Celery stuff
+celerybeat.pid
+celerybeat-schedule
+
+# Cython debug symbols
+cython_debug/
+
+# Data
+**/data/*
+
+# Distribution / packaging
+.Python
+.build/
+.develop-eggs/
+.dist/
+.downloads/
+.eggs/
+.eggs/
+.installed.cfg
+.lib/
+.lib64/
+.parts/
+.sdist/
+.share/python-wheels/
+.var/
+.wheels/
+*.egg
+*.egg-info/
+*.manifest
+*.spec
+
+# Django stuff:
+*.log
+db.sqlite3
+db.sqlite3-journal
+local_settings.py
+
+# Environments
+.env
+.env.bak/
+.venv*/
+.venv.bak/
+env/
+env.bak/
+venv/
+venv.bak/
+
+# Flask stuff:
+.instance/
+.webassets-cache
+
+# IPython
+ipython_config.py
+profile_default/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.pdfsync
+*.synctex.gz
+*.synctex.gz(busy)
+*.synctex.gz(busy)*
+*.synctex.gz([0-9])
+*.synctex.gz([0-9])*
+*.toc
+
+# MacOS
+.DS_Store
+
+# Misc
+config.ini
+paho*
+
+# Misc
+plots/
+*.html
+*.pdf
+!thesis/figures/*.pdf
+
+# MkDocs documentation
+/site
+
+# MyPy
+.dmypy.json
+.mypy_cache/
+
+# Nose test / coverage reports
+.cache
+.coverage
+.coverage.*
+.coveragerc
+.nosetests.xml
+
+# PEP 582
+__pypackages__/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# PyCharm
+.idea/
+
+# PyInstaller
+*.spec
+
+# Pyre type checker
+.pyre/
+
+# Pytest
+.pytest_cache/
+
+# SageMath parsed files
+*.sage.py
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Translations
+*.mo
+*.pot
+
+# Unit test / coverage reports
+.cover
+.py,cover
+.hypothesis/
+.pytest_cache/
+
+# VSC
+.vscode/
+
+# pipenv
+#Pipfile.lock
+
+# poetry
+#poetry.lock
+
+# pdm
+#pdm.lock
+#.pdm.toml
+
+# Allow gitignore
+!*.gitignore
+!*.gitattributes
+!*.github
