@@ -1,6 +1,6 @@
 
 # Multimodal LLMs for Reasoning Based Detection of Anomalies
-This repository contains the AI Operator, an automated framework developed as the core outcome of the thesis titled “Multimodal LLMs for Reasoning-Based Detection of Anomalies 
+This repository contains the AI Operator, an automated framework developed as the core outcome of the thesis titled “Multimodal LLMs for Reasoning-Based Detection of Anomalies"
 
 ## ⚡️ Quickstart
 
