@@ -36,7 +36,15 @@ Next set up the environment variables in a `.env` file:
 
 ```sh
 VERTEXAI_PROJECT="example-project"
-VERTEXAI_LOCATION="europe-central2"
+VERTEXAI_LOCATION="europe-central2
+
 EMAIL_USERNAME="email@address.com"
 EMAIL_PASSWORD="email_password"
+```
+
+Other option is to use ChatGPT. In this case a personal project and API key must be created in order to authenticate requests and interact with the model programmatically through OpenAI's API.
+THe API Key must be defined in `.env` file.
+
+```sh
+OPENAI_API_KEY = "openAI_apikey"
 ```
