@@ -76,7 +76,6 @@ class ScreenshotTaker:
         )
 
         with sync_playwright() as p:
-            # browser = p.chromium.launch(channel="msedge", headless=False)
             browser = p.chromium.launch(headless=True)
             context = browser.new_context(ignore_https_errors=True)
             page = context.new_page()
@@ -131,21 +130,40 @@ class AnomalyDetector:
             img_data = lf.Image.from_bytes(img_file.read())
 
         prompt = """
-        You are an AI-based anomaly detector monitoring electricity consumption in
-        an office environment through visual analysis.
-        Your task:
-        1. Analyze the input graph ({{my_image}}) and identify anomalies
-        in the consumption patterns.
-        2. Provide a detailed description of each anomaly, including potential
-        causes for sudden changes in electricity usage.
-        3. Report exact timestamps (in the format HH:MM)
-        for when each anomaly is detected.
+        <AnomalyDetectionPrompt>
+  <Environment>University Office</Environment>
+  <InputType>Visual Analysis of Time-Series Electricity Consumption Graph</InputType>
+  <InputData>{{my_image}}</InputData>
+  <Objectives>
+    <Objective>Analyze the electricity consumption graph to identify anomalies in usage patterns across university office areas (e.g., faculty offices, admin departments, shared spaces).</Objective>
+    <Objective>Detect and describe irregularities such as:
+      <Pattern>Unusual after-hours energy spikes</Pattern>
+      <Pattern>Sudden drops during working hours</Pattern>
+      <Pattern>Unexpected weekday vs. weekend patterns</Pattern>
+      <Pattern>Signs of equipment malfunction or human error (e.g., lights/HVAC left on)</Pattern>
+    </Objective>
+    <Objective>For each anomaly detected, provide:
+      <Detail>
+        <TimestampFormat>HH:MM</TimestampFormat>
+        <Description>Detailed explanation of the anomaly</Description>
+        <PotentialCauses>Context-aware explanations based on university operations (e.g., late meetings, research work, maintenance)</PotentialCauses>
+      </Detail>
+    </Objective>
+    <Objective>Classify anomalies by type:
+      <Classification>
+        <Type>Technical</Type>
+        <Type>Behavioral</Type>
+        <Type>Operational</Type>
+      </Classification>
+                </Objective>
+            </Objectives>
+        </AnomalyDetectionPrompt>
         """
 
         desc = lf.query(
             prompt,
             AnomalyDetectionResult,
-            lm=lf.llms.VertexAIGeminiFlash1_5(),
+            lm=lf.llms.Gpt4o(),
             my_image=img_data,
         )
 
