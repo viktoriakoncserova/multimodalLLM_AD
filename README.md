@@ -11,10 +11,14 @@ python main.py
 pip install -r requirements-dev.txt
 pip install -r requirements.txt
 ```
+## 🛠 Setting Up Open AI:
+By default, this project uses the GPT-4o model. To use it, you need an OpenAI developer account with a funded billing setup. Generate an OPEN_AI_API_KEY and add it to your `.env` file to authenticate.
+```sh
+OPENAI_API_KEY = "your_open_ai_api_key"
+```
+## 🛠 Setting Up Vertex AI:
 
-## 🛠 Setting Up
-
-By default the project uses Google Vertex AI which requires a Google Cloud account and a project with billing enabled. Two ways to authenticate are available: using application default credentials (ADC) or an API key. For creating an API key, ADC is required anyway. To set up the ADC, follow the instructions [here](https://cloud.google.com/docs/authentication/external/set-up-adc).
+This set-up requires a Google Cloud account and a project with billing enabled. Two ways to authenticate are available: using application default credentials (ADC) or an API key. For creating an API key, ADC is required anyway. To set up the ADC, follow the instructions [here](https://cloud.google.com/docs/authentication/external/set-up-adc).
 
 Here's how to authenticate on macOS:
 
