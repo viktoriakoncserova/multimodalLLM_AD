@@ -130,34 +130,17 @@ class AnomalyDetector:
             img_data = lf.Image.from_bytes(img_file.read())
 
         prompt = """
-        <AnomalyDetectionPrompt>
-  <Environment>University Office</Environment>
-  <InputType>Visual Analysis of Time-Series Electricity Consumption Graph</InputType>
-  <InputData>{{my_image}}</InputData>
-  <Objectives>
-    <Objective>Analyze the electricity consumption graph to identify anomalies in usage patterns across university office areas (e.g., faculty offices, admin departments, shared spaces).</Objective>
-    <Objective>Detect and describe irregularities such as:
-      <Pattern>Unusual after-hours energy spikes</Pattern>
-      <Pattern>Sudden drops during working hours</Pattern>
-      <Pattern>Unexpected weekday vs. weekend patterns</Pattern>
-      <Pattern>Signs of equipment malfunction or human error (e.g., lights/HVAC left on)</Pattern>
-    </Objective>
-    <Objective>For each anomaly detected, provide:
-      <Detail>
-        <TimestampFormat>HH:MM</TimestampFormat>
-        <Description>Detailed explanation of the anomaly</Description>
-        <PotentialCauses>Context-aware explanations based on university operations (e.g., late meetings, research work, maintenance)</PotentialCauses>
-      </Detail>
-    </Objective>
-    <Objective>Classify anomalies by type:
-      <Classification>
-        <Type>Technical</Type>
-        <Type>Behavioral</Type>
-        <Type>Operational</Type>
-      </Classification>
-                </Objective>
-            </Objectives>
-        </AnomalyDetectionPrompt>
+   <AnomalyDetectionPrompt>
+    <description>
+        You are an AI-based anomaly detector monitoring electricity consumption in an office environment through visual analysis. Your tasks are:
+    </description>
+    <tasks>
+        <task>Analyze the input graph and identify anomalies in the consumption patterns.</task>
+        <inputData>{myImage}</inputData>
+        <task>Provide a detailed description of each anomaly, including potential causes for sudden changes in electricity usage.</task>
+        <task>Report exact timestamps (in the format HH:MM) for when each anomaly is detected.</task>
+    </tasks>
+</AnomalyDetectionPrompt>
         """
 
         desc = lf.query(
